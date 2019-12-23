@@ -21,5 +21,8 @@
         'angular-clipboard',
         'inputDropdown',
         angularDragula(angular)
-    ]);
+    ]).config(['$compileProvider', function($compileProvider){
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|chrome-extension|moz-extension):/);
+    }]);
+	
 }());
